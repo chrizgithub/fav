@@ -207,7 +207,7 @@ function parseDL(dl) {
         const a = dt.querySelector(':scope > a');
         if (h3) {
             const name = h3.textContent.trim();
-            if (['즐겨찾기', '플레이리스트'].includes(name)) return;
+            if (['즐겨찾기', '플레이리스트', '확장 프로그램', '히스토리', '다운로드'].includes(name)) return;
             data.push({
                 type: 'folder',
                 name,
@@ -215,7 +215,7 @@ function parseDL(dl) {
             });
         } else if (a) {
             const name = a.textContent.trim();
-            if (['즐겨찾기', '플레이리스트'].includes(name)) return;
+            if (['즐겨찾기', '플레이리스트', '확장 프로그램', '히스토리', '다운로드'].includes(name)) return;
             data.push({ type: 'link', name, url: a.href });
         }
     });
